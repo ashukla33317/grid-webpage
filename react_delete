@@ -1,0 +1,37 @@
+import React, { useState } from 'react';
+
+const App = () => {
+  const [data,setshowData]=useState(
+    [
+      {id:1,username:'aman'},
+      {id:2,username:'sanga'},
+      {id:3,username:'css'},
+      {id:4,username:'ssd'},
+      {id:5,username:'esdddd'},
+      {id:6,username:'fdiijjj'}
+    ]
+  );
+
+  const onRemove =(id)=> {
+   setshowData(data.filter(data=>data.id !==id))
+  };
+
+  return (
+   <>
+  <h1>hello</h1>
+  {
+    data.map((value,index)=>{
+      return(
+        <>
+       {value.id}:{value.username} <button onClick={()=>onRemove(value.id)}>Remove</button> <br/> 
+        </>
+      );
+    })
+  }
+   </>
+    
+    
+  );
+}
+
+export default App;
